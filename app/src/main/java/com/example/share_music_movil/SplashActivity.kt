@@ -1,9 +1,7 @@
 package com.example.share_music_movil
 
-import android.app.Activity
 import android.content.Intent
 import android.content.SharedPreferences
-import android.content.SharedPreferences.Editor
 import android.os.Bundle
 import android.util.Log
 import android.view.Window
@@ -44,7 +42,7 @@ internal class SplashActivity : AppCompatActivity() {
             override fun onSuccess() {
                 val user = userService.user
                 Log.d("STARTING", "GOT USER INFORMATION")
-                getSharedPreferences("SPOTIFY", 0).edit().putString("userid", user!!.id).commit()
+                getSharedPreferences("SPOTIFY", 0).edit().putString("userid", user!!.id).apply()
                 startMainActivity()
             }
         }]

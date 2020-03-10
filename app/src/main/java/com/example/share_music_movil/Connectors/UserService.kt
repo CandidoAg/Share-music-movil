@@ -11,13 +11,13 @@ import com.example.share_music_movil.VolleyCallBack
 import com.google.gson.Gson
 import org.json.JSONObject
 import java.util.*
+import android.util.Log
 
 class UserService(
     private val mqueue: RequestQueue,
     private val msharedPreferences: SharedPreferences
 ) {
     var user: User? = null
-        private set
 
     operator fun get(callBack: VolleyCallBack) {
         val jsonObjectRequest: JsonObjectRequest = object : JsonObjectRequest(
@@ -26,6 +26,8 @@ class UserService(
             Response.Listener { response: JSONObject ->
                 val gson = Gson()
                 user = gson.fromJson(response.toString(), User::class.java)
+                Log.i("UserService" , response.toString())
+                Log.i("UserService" , user?.display_name + " , " + user?.images)
                 callBack.onSuccess()
             },
             Response.ErrorListener { error: VolleyError? -> get(object : VolleyCallBack {
