@@ -1,4 +1,4 @@
-package com.example.share_music_movil.ui.dashboard
+package com.example.share_music_movil.ui.fav
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.share_music_movil.R
 
-class DashboardFragment : Fragment() {
+class favFragment : Fragment() {
 
-    private lateinit var dashboardViewModel: DashboardViewModel
+    private lateinit var FavViewModel: favViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        dashboardViewModel =
-                ViewModelProviders.of(this).get(DashboardViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
+        FavViewModel =
+                ViewModelProviders.of(this).get(favViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_fav, container, false)
+        val textView: TextView = root.findViewById(R.id.text_fav)
+        FavViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

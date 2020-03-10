@@ -12,14 +12,20 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.share_music_movil.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_fav"
+        android:name="com.example.share_music_movil.ui.fav.favFragment"
+        android:label="Favourites"
+        tools:layout="@layout/fragment_fav" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.share_music_movil.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_playlist"
+        android:name="com.example.share_music_movil.ui.playlist.playlistFragment"
+        android:label="PlayList"
+        tools:layout="@layout/fragment_playlist" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.share_music_movil.ui.profile.profileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
